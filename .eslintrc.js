@@ -13,6 +13,8 @@ module.exports = {
   ignorePatterns: ["dist/*.*"],
   rules: {
     "no-console": "off",
+    "no-alert": "off",
+    "no-plusplus": "off",
     "import/prefer-default-export": "off",
     "max-len": [
       "error",

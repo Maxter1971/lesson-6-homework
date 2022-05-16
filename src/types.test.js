@@ -1,4 +1,4 @@
-import { sum, multiplication, sumSymbolsLen } from "./types";
+import { sum, multiplication, sumSymbolsLen, tripleDigitsSum } from "./types";
 
 describe("sum", () => {
   it("sum number", () => {
@@ -15,5 +15,10 @@ describe("multiplication", () => {
 describe("sumSymbolsLen", () => {
   it("sumSymbolsLen number", () => {
     expect(sumSymbolsLen("John", "Lennon")).toEqual(10);
+  });
+});
+describe("tripleDigitsSum", () => {
+  it("tripleDigitsSum number", () => {
+    expect(tripleDigitsSum("123")).toEqual(6);
   });
 });
