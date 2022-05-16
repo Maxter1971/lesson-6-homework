@@ -10,7 +10,9 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["jest"],
+  ignorePatterns: ["dist/*.*"],
   rules: {
+    "no-console": "off",
     "import/prefer-default-export": "off",
     "max-len": [
       "error",
