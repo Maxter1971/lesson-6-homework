@@ -22,8 +22,8 @@ import {
 const input = document.querySelector(".text-field");
 const button = document.querySelector(".button");
 
-input.addEventListener("input", () => inputChecker(input));
-button.addEventListener("click", () => buttonClick(input));
+input.addEventListener("input", () => inputChecker());
+button.addEventListener("click", () => buttonClick());
 
 console.log(sum(2, 3));
 console.log(multiplication(2, 3));

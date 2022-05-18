@@ -133,9 +133,11 @@ export function isWord(str) {
 export function pow(a, x) {
   return a ** x;
 }
-export function inputChecker(input) {
+export function inputChecker() {
+  const input = document.querySelector(".text-field");
   const button = document.querySelector(".button");
-  if (input.value.trim().length > 0) {
+  if (input.value.length > 0) {
+    console.log(input.value);
     button.hidden = false;
   } else {
     button.hidden = true;
@@ -151,7 +153,8 @@ function addElementToList(text) {
     paragraph.removeChild(paragraph.getElementsByTagName("p")[0]);
   }
 }
-export function buttonClick(input) {
+export function buttonClick() {
+  const input = document.querySelector(".text-field");
   const inputText = input.value;
   addElementToList(inputText);
 }
