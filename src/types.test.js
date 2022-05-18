@@ -9,6 +9,12 @@ import {
   sumOfNumbers,
   multiplicationOnSeven,
   getAverage,
+  alterObject,
+  getArraySum,
+  alterArray,
+  diff,
+  isWord,
+  pow,
 } from "./types";
 
 describe("sum", () => {
@@ -74,5 +80,73 @@ describe("multiplicationOnSeven", () => {
 describe("getAverage", () => {
   it("getAverage number", () => {
     expect(getAverage(11)).toBe(5);
+  });
+});
+describe("alterObject", () => {
+  it("alterObject property", () => {
+    let user = {
+      name: "John",
+    };
+    user = alterObject(user, 21);
+    expect(user.age).toBe(21);
+  });
+});
+describe("assignObject", () => {
+  it("alterObject property", () => {
+    let user = {
+      name: "John",
+    };
+    user = alterObject(user, 21);
+    const admin = { ...user, role: "admin" };
+    expect(admin.role).toBe("admin");
+  });
+});
+describe("objectPropertiesToLocals", () => {
+  it("objectPropertiesToLocals locals", () => {
+    let user = {
+      name: "John",
+    };
+    user = alterObject(user, 21);
+    const admin = { ...user, role: "admin" };
+    const { name, age, role } = admin;
+    expect(name).toBe("John");
+    expect(age).toBe(21);
+    expect(role).toBe("admin");
+  });
+});
+describe("getArraySum", () => {
+  it("getArraySum number", () => {
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    expect(getArraySum(arr)).toBe(55);
+  });
+});
+describe("alterArray", () => {
+  it("alterArray", () => {
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    expect(alterArray(arr)).toStrictEqual([2, 4, 6, 8, 10, 12, 14, 16, 18, 20]);
+  });
+});
+describe("maxAndMinArrayValues", () => {
+  it("maxAndMinArrayValues", () => {
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const maxValue = Math.max(...arr);
+    const minValue = Math.min(...arr);
+    expect(maxValue).toBe(10);
+    expect(minValue).toBe(1);
+  });
+});
+describe("diff", () => {
+  it("diff value", () => {
+    expect(diff(2, 8)).toBe(6);
+  });
+});
+describe("isWord", () => {
+  it("isWord condition", () => {
+    expect(isWord("test value")).toBeFalsy();
+  });
+});
+describe("pow", () => {
+  it("pow value", () => {
+    expect(pow(2, 3)).toBe(8);
   });
 });

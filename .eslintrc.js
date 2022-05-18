@@ -16,6 +16,8 @@ module.exports = {
     "no-alert": "off",
     "no-plusplus": "off",
     "no-unreachable": "off",
+    "no-param-reassign": "off",
+    "no-const-assign": "off",
     "import/prefer-default-export": "off",
     "max-len": [
       "error",

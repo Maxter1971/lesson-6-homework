@@ -100,3 +100,58 @@ export function checkCircleInsideSquare(circle, square) {
   }
   return false;
 }
+export function alterObject(user, age) {
+  user.age = age;
+  return user;
+}
+export function getArraySum(arr) {
+  let arrSum = 0;
+  arr.forEach((el) => {
+    arrSum += el;
+  });
+  return arrSum;
+}
+export function alterArray(arr) {
+  const newArr = [];
+  arr.forEach((el) => {
+    newArr.push(el * 2);
+  });
+  return newArr;
+}
+export function diff(a, b) {
+  if (Number(a) > Number(b)) {
+    return Number(a) - Number(b);
+  }
+  return Number(b) - Number(a);
+}
+export function isWord(str) {
+  if (str.split(" ").length === 1) {
+    return true;
+  }
+  return false;
+}
+export function pow(a, x) {
+  return a ** x;
+}
+export function inputChecker(input) {
+  const button = document.querySelector(".button");
+  if (input.value.trim().length > 0) {
+    button.hidden = false;
+  } else {
+    button.hidden = true;
+  }
+}
+function addElementToList(text) {
+  const listItem = document.createElement("p");
+  listItem.innerText = text;
+  const paragraph = document.querySelector(".paragraph");
+  paragraph.append(listItem);
+  const pCount = paragraph.getElementsByTagName("p").length;
+  if (pCount > 5) {
+    paragraph.removeChild(paragraph.getElementsByTagName("p")[0]);
+  }
+}
+export function buttonClick(input) {
+  const inputText = input.value;
+  addElementToList(inputText);
+}
