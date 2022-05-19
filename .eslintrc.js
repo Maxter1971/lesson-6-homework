@@ -18,6 +18,7 @@ module.exports = {
     "no-unreachable": "off",
     "no-param-reassign": "off",
     "no-const-assign": "off",
+    "no-useless-escape": "off",
     "import/prefer-default-export": "off",
     "max-len": [
       "error",
