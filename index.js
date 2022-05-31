@@ -3,30 +3,37 @@ import {
   multiplication,
   sumSymbolsLen,
   tripleDigitsSum,
+} from "./src/homework1";
+import {
   getGreatestNumber,
   getMonthByNumber,
   checkCircleInsideSquare,
+} from "./src/homework2";
+import {
   sumOfNumbers,
   multiplicationOnSeven,
   getAverage,
-  alterObject,
+} from "./src/homework3";
+import { alterObject, copyObject } from "./src/homework4";
+import {
   getArraySum,
   alterArray,
-  diff,
-  isWord,
-  pow,
-  inputChecker,
-  buttonClick,
-  getDayOfWeek,
-  getFullMins,
-  getYoungerUser,
+  maxOfArray,
+  minOfArray,
+} from "./src/homework5";
+import { diff, isWord, pow } from "./src/homework6";
+import { inputChecker, buttonClick } from "./src/homework7";
+import { getDayOfWeek, getFullMins, getYoungerUser } from "./src/homework8";
+import {
   isRectangular,
   getCircleParametres,
   getQuadratic,
+} from "./src/homework9";
+import {
   isDateByRegexp,
   isEmailByRegexp,
   isTelephoneByRegexp,
-} from "./src/types";
+} from "./src/homework10";
 
 const input = document.querySelector(".text-field");
 const button = document.querySelector(".button");
@@ -53,22 +60,23 @@ let user = {
 const ageValue = +prompt("Enter age value:");
 user = alterObject(user, ageValue);
 console.log(user);
-const admin = { ...user, role: "admin" };
+const admin = copyObject(user);
 console.log(admin);
 const { name, age, role } = admin;
 console.log(name, age, role);
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 console.log(getArraySum(arr));
 console.log(alterArray(arr));
-const maxValue = Math.max(...arr);
-const minValue = Math.min(...arr);
+const maxValue = maxOfArray(arr);
+const minValue = minOfArray(arr);
 console.log(maxValue, minValue);
 console.log(diff(2, 8));
 console.log(isWord("test value"));
 console.log(pow(2, 3));
 const inputDate = prompt("Enter date:");
 console.log(getDayOfWeek(inputDate));
-console.log(getFullMins());
+const now = new Date("2022-05-31T03:24:00");
+console.log(getFullMins(now));
 const firstBirhDay = "12.03.1960";
 const secondBirhDay = "22.05.1971";
 const youngerUser = getYoungerUser(firstBirhDay, secondBirhDay);
